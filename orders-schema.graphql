@@ -9,21 +9,23 @@ type Query {
 }
 
 type Order @key(fields: "id") {
-  """
-  Each order has a unique id which is separate from the user or items they bought
-  """
-  id: ID!
+  """The user who made the purchase"""
+  buyer: User!
 
-  """
-  The user who made the purchase
-  """
-  buyer: User! #@requiresScopes(scopes: [["order:buyer"]])
+  """Each order has a unique id which is separate from the user or items they bought"""
+  id: ID!
 
   """
   A list of all the items they purchased. This is the Variants, not the Products so we know exactly which
   product and which size/color/feature was bought
   """
-  items: [ProductVariant!]! #@requiresScopes(scopes: [["order:items"]])
+  items: [ProductVariant!]!
+
+  """The date the oder was made"""
+  orderDate: String
+
+  """The total cost of the order"""
+  total: Float
 }
 
 type User @key(fields: "id", resolvable: false) {
