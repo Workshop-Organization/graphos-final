@@ -44,9 +44,9 @@ authorization:
     enabled: true
 
 limits:
-  max_depth: 3
+  max_depth: 100
   max_height: 100
-  max_aliases: 3
+  max_aliases: 10
 
 coprocessor:
   url: https://coprocessor-wn3vwa6nlq-ue.a.run.app 
