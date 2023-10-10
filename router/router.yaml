@@ -44,6 +44,6 @@ authorization:
     enabled: true
 
 limits:
-  max_depth: 5
+  max_depth: 1
   max_height: 100
   max_aliases: 3
